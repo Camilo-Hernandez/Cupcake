@@ -27,3 +27,9 @@ z
 Japp/src/main/java/com/camihruiz24/cupcake/ui/screens/OrderSummaryScreen.kt,f\8\f83bfa18f903260224559c33c99bf24944c96697
 i
 9app/src/main/java/com/camihruiz24/cupcake/MainActivity.kt,5\7\571b166066452b72f96a983405abff31e4b7339c
+y
+Iapp/src/androidTest/java/com/camihruiz24/cupcake/test/ScreenAssertions.kt,c\6\c6e87ae29a81c3204db8f09084f69df2477188c6
+„
+Tapp/src/androidTest/java/com/camihruiz24/cupcake/test/CupcakeScreenNavigationTest.kt,f\f\ffd805b325bb152c7a370d7896541d1db41acc45
+‚
+Rapp/src/androidTest/java/com/camihruiz24/cupcake/test/ComposeTestRuleExtensions.kt,a\0\a0a06704c231b308140a01a079b59db62b3a73f7

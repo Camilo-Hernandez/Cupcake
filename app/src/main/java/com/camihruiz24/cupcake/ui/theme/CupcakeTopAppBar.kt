@@ -4,9 +4,6 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,23 +12,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import com.camihruiz24.cupcake.R
-import kotlinx.coroutines.delay
 
-enum class CupcakeScreens(@StringRes title: Int) {
+enum class CupcakeScreens(@StringRes val title: Int) {
     Start(title = R.string.app_name),
     Flavor(title = R.string.choose_flavor),
     Pickup(title = R.string.choose_pickup_date),
-    Summary(title = R.string.order_summary)
+    Summary(title = R.string.order_summary),
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +39,7 @@ fun CupcakeTopAppBar(
         title = {
             Row(modifier = Modifier, verticalAlignment = Alignment.CenterVertically) {
                 Text(
-                    stringResource(id = R.string.app_name),
+                    text = stringResource(currentScreen.title),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                     style = MaterialTheme.typography.titleLarge,
