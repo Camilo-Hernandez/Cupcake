@@ -26,7 +26,7 @@ import com.camihruiz24.cupcake.ui.components.FormattedPriceLabel
 
 /**
  * This composable expects [orderUiState] that represents the order state, [onCancelButtonClicked]
- * lambda that triggers canceling the order and passes the final order to [onSendButtonClicked]
+ * lambda that triggers canceling the order and passes the final order to [onShareButtonClicked]
  * lambda
  */
 @Composable
@@ -54,7 +54,7 @@ fun OrderSummaryScreen(
         orderUiState.quantity,
     )
 
-    //Load and format a string resource with the parameters.
+    // Load and format a string resource with the parameters.
     val orderSummary = stringResource(
         R.string.order_details,
         numberOfCupcakes,
@@ -65,7 +65,7 @@ fun OrderSummaryScreen(
 
     val newOrder: String = stringResource(R.string.new_cupcake_order)
 
-    //Create a list of order summary to display
+    // Create a list of order summary to display
     val items = listOf(
         // Summary line 1: display selected quantity
         Pair(stringResource(R.string.quantity), numberOfCupcakes),
@@ -128,9 +128,8 @@ fun OrderSummaryPreview() {
     OrderSummaryScreen(
         orderUiState = OrderModel(0, "Test", "Test", "$300.00", emptyList()),
         onCancelButtonClicked = {},
-        onShareButtonClicked = { subject, summary -> },
+        onShareButtonClicked = { _, _ -> },
         modifier = Modifier.fillMaxHeight()
     )
-
 }
 

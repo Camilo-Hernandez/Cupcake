@@ -29,6 +29,9 @@ class CupcakeOrderViewModel @Inject constructor() : ViewModel() {
 
     val uiState = _uiState.asStateFlow()
 
+    /**
+     * Assigns the [quantity] value to the [_uiState] attribute
+     */
     fun setCupcakesQuantity(quantity: Int) {
         _uiState.update {
             it.copy(
@@ -49,6 +52,10 @@ class CupcakeOrderViewModel @Inject constructor() : ViewModel() {
         }
     }
 
+    /**
+     * Set the [pickupDate] of the order for this order's state.
+     * Only one pickup date can be selected for the whole order
+     */
     fun setDate(pickupDate: String) {
         _uiState.update {
             it.copy(
@@ -57,6 +64,9 @@ class CupcakeOrderViewModel @Inject constructor() : ViewModel() {
         }
     }
 
+    /**
+     * Set the attributes of the state to their initial value
+     */
     fun resetOrder() {
         _uiState.update {
             it.copy(
